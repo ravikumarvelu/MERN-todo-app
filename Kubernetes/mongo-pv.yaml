@@ -4,7 +4,8 @@ metadata:
   name: mongo-volume
 spec:
   storageClassName: local-storage
-  capacity: 1Gi
+  capacity:
+    storage: 1Gi
   accessModes:
     - ReadWriteMany
   hostPath:
