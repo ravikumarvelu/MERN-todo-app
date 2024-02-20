@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  labels:
+    name: frontend-deployment
+    app: to-do-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: frontend-app-pod
+      app: to-do-app
+  template:
+    metadata:
+      name: frontend-app-pod
+      labels:
+        name: frontend-app-pod
+        app: to-do-app
+    spec:
+      containers:
+        - name: frontend-app-pod
+          image: ravikumarvelu/frontend-todo
+          ports:
+            - containerPort: 3000
