@@ -23,4 +23,9 @@ spec:
           image: ravikumarvelu/backend-todo
           ports:
             - containerPort: 5000
+          resources:
+            limits:
+              cpu: 200m
+            requests:
+              cpu: 50m
     
